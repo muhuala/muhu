@@ -66,9 +66,9 @@ section
 {
     display:inline-block ;
     transition:all .4s ease-in-out ;
-    padding:10px 27px;
+    padding:10px 10px;
     border-radius:50px;
-    background:transparent;
+    background:#FF0000;
     border:2px solid var(--gray-color);
     color:var(--text-gray);
     text-transform:uppercase ;
@@ -80,11 +80,10 @@ section
 }
 .main-btn:hover
 {
-    background:var(--primary-color);
+    background:#29D74A;
     border-color:var(--primary-color);
     color:var(--text-white);
 }
-
   /*  custom css part two */
 
 h1
