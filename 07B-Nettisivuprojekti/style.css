@@ -335,10 +335,7 @@ section .title::after{
 }
 .services .serv-content .card{
     
-    background-image: url('images/header-bg'); /* Adjust the path to your image */
-    background-size: cover; /* Ensures the image covers the entire background */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    background-position: center; /* Centers the image */
+   
     width: calc(33% - 20px);
     background: #222;
     text-align: center;
