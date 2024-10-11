@@ -1,0 +1,250 @@
+body {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    color: #333333;
+    margin: 20px;
+}
+
+h1:before {
+    content: 'R0331 - Dynamic Web Applications with JavaScript';
+    display: block;
+    font-size: 60%;
+    font-style: italic;
+}
+
+h1 {
+    background: url('img/js-logo.png') no-repeat right top; /* Logo as background */
+    background-size: contain; /* Ensure the logo scales appropriately */
+    color: #dc0614;
+    text-shadow: 1px 1px 1px #1966a2;
+    padding: 20px; /* Add padding for spacing */
+    height: auto; /* Allow height to adjust based on content */
+    text-align: center; /* Center align the header text */
+}
+
+/* Logo specifically as an image */
+.logo-img {
+    width: 100%; /* Responsive width */
+    max-width: 200px; /* Maximum width to prevent it from getting too big */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the image */
+    display: block; /* Make the image a block element */
+}
+
+h2 {
+    color: #1966a2;
+}
+
+hr {
+    border: 1px solid #1966a2;
+}
+
+.red-box {
+    background: red;
+    width: 50px;
+    height: 50px;
+}
+
+.no-border {
+    border: 0;
+    height: auto;
+    padding: 0;
+    margin: 0;
+}
+
+.red,
+.error,
+.error textarea,
+.error input {
+    border-color: red;
+    color: red;
+}
+
+div.border {
+    border: 1px solid black;
+    padding: 5px;
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
+
+.ws3 div,
+.ws4.div {
+    width: 200px;
+    height: 100px;
+    border: 1px solid black;
+}
+
+.ws3 table,
+.ws3 tr,
+.ws3 td {
+    margin: 10px;
+    padding: 10px;
+}
+
+.ws3 table,
+.ws3 tr,
+.ws3 td,
+.ws3 th,
+.ws5 table,
+ws5.tr,
+ws5.td {
+    border: 1px solid gray;
+    width: 50%;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+table.display {
+    width: 100%;
+}
+
+.ws4 img {
+    position: relative;
+    left: 0px;
+    width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.ws5 div {
+    width: 200px;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.ws5 span {
+    display: none;
+}
+
+.ws5 .error span {
+    display: block;
+}
+
+.ws6 div {
+    margin-bottom: 10px;
+}
+
+.ws6 table,
+.ws6 tr,
+.ws6 td,
+.ws7 table,
+.ws7 tr,
+.ws7 td {
+    border: 1px solid gray;
+    width: 50%;
+}
+
+.ws7 div {
+    min-width: 200px;
+    width: auto;
+    min-height: 200px;
+    height: auto;
+    border: 1px solid black;
+}
+
+.ws8 table {
+    border-collapse: collapse;
+    width: 100%; /* Ensure the table is responsive */
+    border: 1px solid black;
+}
+
+.ws8 th,
+.ws8 td {
+    padding: 4px;
+    font-family: Verdana;
+    font-size: 12px;
+}
+
+.ws8 tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.ws8 th,
+.ws8 td {
+    border: 1px solid #ddd;
+}
+
+.ws8 td {
+    height: 40px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.ws8 img {
+    width: 100px;
+    height: auto; /* Maintain aspect ratio */
+}
+
+#jsondata,
+#rawdata,
+#weatherdata {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.ws9 div {
+    width: 200px;
+    height: 100px;
+    border: 1px solid black;
+}
+
+#ajax {
+    width: 80%;
+    height: 500px;
+    border: 1px solid black;
+    overflow: auto;
+    padding: 20px;
+}
+
+.ws-9 #main-content {
+    width: 100%;
+    height: auto;
+    border: 0;
+}
+
+/* Default styles for large screens */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Media query for medium screens (e.g. tablets) */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 24px; /* Adjust font size for medium screens */
+        padding: 15px; /* Adjust padding for medium screens */
+    }
+
+    .logo-img {
+        max-width: 150px; /* Adjust max width for medium screens */
+    }
+}
+
+/* Media query for small screens (e.g. mobile phones) */
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 20px; /* Further adjust font size for mobile screens */
+        padding: 10px; /* Adjust padding for mobile screens */
+    }
+
+    .logo-img {
+        max-width: 100px; /* Adjust max width for small screens */
+    }
+
+    /* Ensure all images are responsive */
+    .ws4 img,
+    .ws8 img {
+        width: 100%; /* Full width on mobile */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
