@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+      <!-- Font Awesome CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>PROJECT 01</title>
+
+</head>
+<body>
+  <section class="todo">
+    <h2>PROJECT01-To-do list</h2>
+    <div class="input">
+      <input
+        type="text"
+        class="input-field"
+        id="todoInput"
+        placeholder="What needs to be done?"
+      />
+      <button class="btn"><i class="fas fa-plus"></i> </button>
+    </div>
+    <ul class="scroll" id="todoList">
+    </ul>
+   
+    
+    
+    
+    <div>
+      <hr class="counter" />
+      
+     
+        
+   
+        <div class="counter-container">
+          <span id="itemsLeft">0 items left</span>
+          
+          
+           <!-- Dropdown menu for mobile view -->
+  <select class="filter-select" id="filterSelect">
+    <option value="all">All</option>
+    <option value="active">Active</option>
+    <option value="completed">Completed</option>
+    <option value="clearCompleted">Clear completed</option>
+    <option value="deleteAll">Delete All</option>
+  </select>
+
+  <!-- button layout for larger screens -->
+  <div class="additional-controls">
+    <button id="allButton"><i class="fas fa-list"></i> All</button>
+    <button id="activeButton"><i class="fas fa-tasks"></i> Active</button>
+    <button id="completedButton"><i class="fas fa-check-circle"></i> Completed</button>
+    <button id="clearCompletedButton"><i class="fas fa-eraser"></i> Clear completed</button>
+    <button id="deleteButton"><i class="fas fa-trash-alt"></i> Delete All</button>
+  </div>
+</div>
+  </section>
+ 
+</body>
+</html>
+
