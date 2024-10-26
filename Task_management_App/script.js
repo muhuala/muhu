@@ -28,6 +28,14 @@ document.addEventListener("DOMContentLoaded", function () {
   displayTasks();
 });
 
+
+document.querySelectorAll('.task-item input[type="checkbox"]').forEach(checkbox => {
+  checkbox.addEventListener('change', function() {
+    this.closest('.task-item').classList.toggle('done', this.checked);
+  });
+});
+
+
 function validateInput(input) {
   const formattedInput = input.trim().toLowerCase();
 
