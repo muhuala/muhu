@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Management App - Project Overview</title>
+  <style>
+    * { margin: 0; padding: 0; }
+    html, body { height: 100%; overflow: hidden; }
+    #mindmap { width: 100vw; height: 100vh; overflow-y: auto; }
+  </style>
+</head>
+<body>
+  <svg id="mindmap"></svg>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.17.3-alpha.1/dist/browser/index.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const data = {
+        "content": "📝 Project 1 - Task Management App",
+        "children": [
+          {
+            "content": "Overview",
+            "children": [
+              { "content": "The To-Do List Manager helps users organize tasks by adding, editing, deleting, and marking tasks as complete." },
+              { "content": "Built with HTML, CSS, and JavaScript with local storage for data persistence." },
+              { "content": "First major JavaScript project, utilizing DOM manipulation and form handling." }
+            ]
+          },
+          {
+            "content": "Key Features",
+            "children": [
+              { "content": "Add Tasks", "children": [{ "content": "Add tasks using input, 'Enter' key or 'Add' button." }] },
+              { "content": "Edit Tasks", "children": [{ "content": "Direct editing within the list for quick updates." }] },
+              { "content": "Delete Tasks", "children": [{ "content": "Options to delete all or only completed tasks." }] },
+              { "content": "Mark as Complete", "children": [{ "content": "Checkbox for each task to mark it as done." }] },
+              { "content": "Filter Tasks", "children": [{ "content": "Filter options: all, active, or completed tasks." }] },
+              { "content": "Task Count", "children": [{ "content": "Displays total and active tasks count." }] },
+              { "content": "Data Persistence", "children": [{ "content": "Local storage retains tasks across sessions." }] }
+            ]
+          },
+          {
+            "content": "Project Structure",
+            "children": [
+              { "content": "index.html", "children": [{ "content": "Contains the HTML structure." }] },
+              { "content": "styles.css", "children": [{ "content": "CSS styling for a user-friendly interface." }] },
+              { "content": "script.js", "children": [
+                  { "content": "Handles JavaScript logic: add, edit, delete tasks, and DOM updates." },
+                  { "content": "Stores and retrieves tasks in local storage." },
+                  { "content": "Validates input to prevent duplicates or errors." }
+                ] 
+              }
+            ]
+          },
+          {
+            "content": "Self-Project Evaluation",
+            "children": [
+              {
+                "content": "General Evaluation",
+                "children": [
+                  { "content": "Functionality", "children": [{ "content": "Fully meets requirements: add, edit, delete, filter tasks." }] },
+                  { "content": "Data Persistence", "children": [{ "content": "Effective use of local storage for smooth user experience." }] },
+                  { "content": "User Interface", "children": [{ "content": "Clean and intuitive layout with clear buttons and labels." }] },
+                  { "content": "Error Handling", "children": [{ "content": "Input validation to prevent short, duplicate, or number-starting tasks." }] },
+                  { "content": "Responsiveness", "children": [{ "content": "Responsive layout for both desktop and mobile." }] },
+                  { "content": "Efficiency", "children": [{ "content": "Optimized DOM updates, improving performance for large lists." }] },
+                  { "content": "Accessibility", "children": [{ "content": "Keyboard-friendly and visually accessible with clear labels." }] },
+                  { "content": "Innovation", "children": [{ "content": "Includes task filtering for enhanced task organization." }] }
+                ]
+              },
+              {
+                "content": "Challenges and Learnings",
+                "children": [
+                  { "content": "DOM Manipulation", "children": [{ "content": "Learned to update and manage large lists efficiently." }] },
+                  { "content": "Error Handling", "children": [{ "content": "Added input validation for better UX." }] },
+                  { "content": "Storage and Persistence", "children": [{ "content": "Practiced saving data in local storage." }] },
+                  { "content": "Responsive Design", "children": [{ "content": "Implemented media queries for cross-device usability." }] }
+                ]
+              },
+              {
+                "content": "Final Self-Grade",
+                "children": [
+                  { "content": "Functionality: 9/10" },
+                  { "content": "Data Persistence: 9/10" },
+                  { "content": "User Interface: 9/10" },
+                  { "content": "Responsiveness: 10/10" },
+                  { "content": "Accessibility: 8/10" },
+                  { "content": "Overall Score: 45/50" }
+                ]
+              }
+            ]
+          },
+          {
+            "content": "Deployment",
+            "children": [
+              { "content": "Live on Netlify", "children": [{ "content": "https://taskmanagment-app.netlify.app/" }] }
+            ]
+          },
+          {
+            "content": "Project Details",
+            "children": [
+              { "content": "Developer: Muhudin Mahamud Alasow" },
+              { "content": "GitHub Repository", "children": [{ "content": "https://github.com/muhuala/muhu" }] },
+              { "content": "Start Date: October 3, 2024" },
+              { "content": "Completion Date: October 28, 2024" }
+            ]
+          },
+          {
+            "content": "Final Notes",
+            "children": [
+              { "content": "Hands-on experience with a full JavaScript application." },
+              { "content": "Strengthened understanding of data persistence, UI design, and input validation." },
+              { "content": "Excited to apply these skills in future projects!" }
+            ]
+          }
+        ]
+      };
+      window.mm = markmap.Markmap.create("#mindmap", {}, data);
+    });
+  </script>
+</body>
+</html>
