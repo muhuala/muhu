@@ -26,13 +26,13 @@ h2 {
   text-transform: uppercase;
   color: var(--dark);
   text-align: center;
-  font-size: 1.5rem; /* Default font size for larger screens */
+  font-size: 1.5rem; 
 }
 
 .scroll {
-  max-height: 15rem; /* Sets a maximum height for the list */
-  overflow-y: auto; /* Shows scrollbar only when needed */
-  list-style-type: none; /* Removes bullet points */
+  max-height: 15rem; 
+  overflow-y: auto; 
+  list-style-type: none; 
   padding: 0;
   margin: 0;
 }
@@ -83,7 +83,13 @@ h2 {
   border-radius: 8px;
   cursor: pointer;
 }
+.disabled {
+  text-decoration: line-through;
+}
 
+.task-item.done {
+  text-decoration: line-through;
+}
 
 .task-item.disabled {
   color: #1c2638;
