@@ -73,8 +73,6 @@ function addTask() {
   todo.push({ task: input, completed: false });
   saveToLocalStorage(); 
   displayTasks(); 
-
-  
 }
 
 
@@ -96,11 +94,29 @@ function displayTasks() {
     taskText.className = item.completed ? "disabled" : "";
     taskText.addEventListener("click", () => editTask(index));
 
+    // Last Update: Font Awesome delete icon with right alignment and transparent background
+    const deleteButton = document.createElement("button");
+    deleteButton.classList.add("delete-button");
+    deleteButton.innerHTML = '<i class="fas fa-trash"></i>'; // Using Font Awesome icon
+    deleteButton.addEventListener("click", () => confirmDeleteTask(index));
+
+    // Append elements to the task list item
     listItem.appendChild(checkbox);
     listItem.appendChild(taskText);
+    listItem.appendChild(deleteButton); // Add delete button on the right
     todoList.appendChild(listItem);
   });
   updateCounts();
+}
+
+// Last Update: Function to confirm and delete a single task
+function confirmDeleteTask(index) {
+  const confirmation = confirm("Are you sure you want to delete this task?");
+  if (confirmation) {
+    todo.splice(index, 1); 
+    saveToLocalStorage(); 
+    displayTasks();
+  }
 }
 
 function displayActiveTasks() {
@@ -220,10 +236,6 @@ function updateCounts() {
   todoCount.textContent = todo.length;
 }
 
-
-
-
-
 // Filter tasks based on selection  ON small
 document.getElementById("filterSelect").addEventListener("change", function () {
   const action = this.value;
@@ -249,5 +261,3 @@ document.getElementById("filterSelect").addEventListener("change", function () {
   // Reset dropdown to default
   this.value = "all";
 });
-
-

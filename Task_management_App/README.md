@@ -54,15 +54,15 @@ Based on the evaluation criteria, I would grade myself as follows:
 - **Responsiveness**: 10/10
 - **Accessibility**: 8/10
 - **Overall Score**: 45/50
-## Summary
-Based on the project requirements, I believe my project falls into the **Very Good to Excellent range** (25-30 points). The To-Do List Manager meets all essential requirements and incorporates dynamic, user-focused features, demonstrating a comprehensive understanding of JavaScript and DOM manipulation.
+
 ## Deployment
 
-The app is live and hosted on Netlify. Check it out here: [https://taskmanagment-app.netlify.app/](https://taskmanagment-app.netlify.app/)
+The app is live and hosted on Netlify. Check it out here: [Project 1 - Task Management App](https://taskmanagment-app.netlify.app/)
 
 ## Project Details
-- **Developer**: Muhudin Mahamud Alasow
-- **GitHub Repository**: [https://github.com/muhuala/muhu](https://github.com/muhuala/muhu)
+- **Project Name**: Project 1-Todoist 
+- **Developer**: [Muhudin  Alasow](https://muhuala.github.io/muhu/)
+- **GitHub Repository**: [Muhudin Alasow](https://github.com/muhuala/muhu)
 - **Start Date**: October 3, 2024
 - **Completion Date**: October 28, 2024
 
