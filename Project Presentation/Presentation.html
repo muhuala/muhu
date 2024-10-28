@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Presentation</title>
+    <!-- CSS Styles -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #555;
+        }
+        .video-container {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        /* Custom Controls Styling */
+        .controls {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            box-sizing: border-box;
+            transition: opacity 0.3s;
+            opacity: 0;
+        }
+        .video-container:hover .controls {
+            opacity: 1;
+        }
+        .controls button, .controls input[type="range"] {
+            margin: 0 5px;
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            outline: none;
+            font-size: 16px;
+        }
+        .controls button:hover {
+            color: #1db954;
+        }
+        .controls .play-pause::before {
+            content: '►';
+            font-size: 18px;
+        }
+        .controls .play-pause.paused::before {
+            content: '❚❚';
+        }
+        .controls .mute::before {
+            content: '🔊';
+        }
+        .controls .mute.muted::before {
+            content: '🔇';
+        }
+        .controls .fullscreen::before {
+            content: '⛶';
+        }
+        .controls .fullscreen.fullscreened::before {
+            content: '✕';
+        }
+        .controls .progress-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            margin: 0 10px;
+        }
+        .controls .progress {
+            width: 100%;
+            margin: 0 10px;
+        }
+        .controls input[type="range"] {
+            width: 100%;
+        }
+        /* Time Display Styling */
+        .time {
+            color: #fff;
+            font-size: 14px;
+            width: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Project Presentation</h1>
+    <p>Welcome to the project presentation. Watch the video below to learn more about our work.</p>
+
+    <!-- Video Container with Custom Controls -->
+    <div class="video-container" id="videoContainer">
+        <video id="projectVideo">
+            <source src="vid/Project Presentation.mp4" type="video/mp4">
+            <source src="vid/Project Presentation" type="video/webm">
+            <!-- Fallback message for browsers that don't support the video tag -->
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Custom Controls -->
+        <div class="controls" id="videoControls">
+            <button id="playPause" class="play-pause" aria-label="Play/Pause"></button>
+            
+            <div class="progress-container">
+                <span id="currentTime" class="time">0:00</span>
+                <input type="range" id="progress" class="progress" value="0" min="0" max="100" aria-label="Video Progress">
+                <span id="duration" class="time">0:00</span>
+            </div>
+            
+            <button id="mute" class="mute" aria-label="Mute/Unmute"></button>
+            <input type="range" id="volume" min="0" max="1" step="0.05" value="1" class="volume" aria-label="Volume Control">
+            <button id="fullscreen" class="fullscreen" aria-label="Fullscreen Toggle"></button>
+        </div>
+    </div>
+
+    <!-- You can include JavaScript here -->
+    <script>
+        // Selecting Elements
+        const video = document.getElementById('projectVideo');
+        const playPauseBtn = document.getElementById('playPause');
+        const muteBtn = document.getElementById('mute');
+        const volumeSlider = document.getElementById('volume');
+        const progress = document.getElementById('progress');
+        const currentTimeEl = document.getElementById('currentTime');
+        const durationEl = document.getElementById('duration');
+        const fullscreenBtn = document.getElementById('fullscreen');
+        const videoContainer = document.getElementById('videoContainer');
+        const controls = document.getElementById('videoControls');
+
+        // Play/Pause Functionality
+        function togglePlayPause() {
+            if (video.paused || video.ended) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        }
+
+        playPauseBtn.addEventListener('click', togglePlayPause);
+
+        video.addEventListener('play', () => {
+            playPauseBtn.classList.add('paused');
+        });
+
+        video.addEventListener('pause', () => {
+            playPauseBtn.classList.remove('paused');
+        });
+
+        // Mute/Unmute Functionality
+        function toggleMute() {
+            video.muted = !video.muted;
+            if (video.muted) {
+                muteBtn.classList.add('muted');
+            } else {
+                muteBtn.classList.remove('muted');
+            }
+        }
+
+        muteBtn.addEventListener('click', toggleMute);
+
+        // Volume Control
+        volumeSlider.addEventListener('input', (e) => {
+            video.volume = e.target.value;
+            if (video.volume === 0) {
+                video.muted = true;
+                muteBtn.classList.add('muted');
+            } else {
+                video.muted = false;
+                muteBtn.classList.remove('muted');
+            }
+        });
+
+        // Update Progress Bar
+        video.addEventListener('timeupdate', () => {
+            const current = video.currentTime;
+            const duration = video.duration;
+            const percent = (current / duration) * 100;
+            progress.value = percent;
+
+            // Update Time Display
+            currentTimeEl.textContent = formatTime(current);
+            durationEl.textContent = formatTime(duration);
+        });
+
+        // Seek Functionality
+        progress.addEventListener('input', (e) => {
+            const percent = e.target.value;
+            const seekTime = (percent / 100) * video.duration;
+            video.currentTime = seekTime;
+        });
+
+        // Format Time in mm:ss
+        function formatTime(time) {
+            const minutes = Math.floor(time / 60);
+            const seconds = Math.floor(time % 60);
+            return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        }
+
+        // Initialize Duration
+        video.addEventListener('loadedmetadata', () => {
+            durationEl.textContent = formatTime(video.duration);
+        });
+
+        // Fullscreen Toggle Functionality
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                if (videoContainer.requestFullscreen) {
+                    videoContainer.requestFullscreen();
+                } else if (videoContainer.webkitRequestFullscreen) { /* Safari */
+                    videoContainer.webkitRequestFullscreen();
+                } else if (videoContainer.msRequestFullscreen) { /* IE11 */
+                    videoContainer.msRequestFullscreen();
+                }
+                fullscreenBtn.classList.add('fullscreened');
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) { /* Safari */
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { /* IE11 */
+                    document.msExitFullscreen();
+                }
+                fullscreenBtn.classList.remove('fullscreened');
+            }
+        }
+
+        fullscreenBtn.addEventListener('click', toggleFullscreen);
+
+        // Update Fullscreen Button on Change
+        document.addEventListener('fullscreenchange', () => {
+            if (!document.fullscreenElement) {
+                fullscreenBtn.classList.remove('fullscreened');
+            }
+        });
+
+        document.addEventListener('webkitfullscreenchange', () => { /* Safari */
+            if (!document.webkitIsFullScreen) {
+                fullscreenBtn.classList.remove('fullscreened');
+            }
+        });
+
+        document.addEventListener('msfullscreenchange', () => { /* IE11 */
+            if (!document.msFullscreenElement) {
+                fullscreenBtn.classList.remove('fullscreened');
+            }
+        });
+
+        // Optional: Hide Controls When Not Hovering
+        let hideControlsTimeout;
+
+        videoContainer.addEventListener('mousemove', () => {
+            controls.style.opacity = '1';
+            clearTimeout(hideControlsTimeout);
+            hideControlsTimeout = setTimeout(() => {
+                controls.style.opacity = '0';
+            }, 3000);
+        });
+
+        videoContainer.addEventListener('mouseleave', () => {
+            controls.style.opacity = '0';
+        });
+
+        // Keyboard Accessibility (Optional Enhancements)
+        document.addEventListener('keydown', (e) => {
+            // Spacebar toggles play/pause
+            if (e.code === 'Space') {
+                e.preventDefault();
+                togglePlayPause();
+            }
+            // 'F' key toggles fullscreen
+            if (e.key.toLowerCase() === 'f') {
+                toggleFullscreen();
+            }
+            // 'M' key toggles mute
+            if (e.key.toLowerCase() === 'm') {
+                toggleMute();
+            }
+        });
+    </script>
+
+</body>
+</html>
