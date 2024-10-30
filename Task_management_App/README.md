@@ -3,6 +3,12 @@
 ## Overview
 
 Welcome to my **To-Do List Manager** project! This application helps users organize daily tasks by allowing them to add, edit, delete, and mark tasks as complete. It’s a simple yet effective tool built with **HTML**, **CSS**, and **JavaScript**, with **local storage** to keep tasks saved even when the browser is closed or refreshed. This is my first big JavaScript project, where I put what I learned into practice with DOM manipulation and form handling. 
+## Project Details
+- **Project Name**: Project 1-Todoist 
+- **Developer**: [Muhudin Mahamud Alasow](https://muhuala.github.io/muhu/)
+- **GitHub Repository**: [Muhudin Alasow](https://github.com/muhuala/muhu)
+- **Start Date**: October 3, 2024
+- **Completion Date**: October 28, 2024
 
 ### Key Features
 - **Add Tasks**: Users can add new tasks with an input box, submitting by pressing 'Enter' or clicking an 'Add' button.
@@ -46,29 +52,18 @@ This project was a rewarding experience in creating a JavaScript application fro
 - **Responsive Design**: Gained experience with media queries to ensure the app is usable across various devices.
 
 ### Final Self-Grade
-Based on the evaluation criteria, I would grade myself as follows:
-
-- **Completion of Functional Requirements**: 9/10
-- **Data Persistence**: 9/10
-- **User Interface**: 9/10
-- **Responsiveness**: 10/10
-- **Accessibility**: 8/10
-- **Overall Score**: 45/50
+Based on the project requirements, I believe my project falls into the Very Good to Excellent range .
+The To-Do List Manager meets all essential requirements and incorporates dynamic, user-focused features,
+demonstrating a comprehensive understanding of JavaScript and DOM manipulation.
 
 ## Deployment
 
 The app is live and hosted on Netlify. Check it out here: [Project 1 - Task Management App](https://taskmanagment-app.netlify.app/)
 
-## Project Details
-- **Project Name**: Project 1-Todoist 
-- **Developer**: [Muhudin  Alasow](https://muhuala.github.io/muhu/)
-- **GitHub Repository**: [Muhudin Alasow](https://github.com/muhuala/muhu)
-- **Start Date**: October 3, 2024
-- **Completion Date**: October 28, 2024
-
 ---
 
 ### Final Notes
-This project was a great hands-on experience in creating a full JavaScript application. It reinforced the importance of **data persistence**, **user interface design**, and **input validation**. I’m excited to continue building on these skills in future projects!
-
+This project was a great hands-on experience in creating a full JavaScript application. It reinforced the im-
+portance of data persistence, user interface design, and input validation. I’m excited to continue building
+on these skills in future projects
 
