@@ -3,7 +3,9 @@
 ## Overview
 
 Welcome to the **LastFM Music Finder**! This application allows users to search for an artist by name and view relevant information, including a brief bio and a display of the artist's top albums. Built using **HTML**, **CSS**, and **JavaScript**, it utilizes the **LastFM API** for dynamic content, providing users with updated information each time they perform a search. The project emphasizes real-time data retrieval, error handling, and responsive design, ensuring a seamless user experience across devices.
+## Deployment
 
+The app is live and hosted on Netlify. Check it out here: [Project 2 - LastFM Music Finder](https://lasfmmusicfinder.netlify.app/)
 ---
 
 ### Project Details
