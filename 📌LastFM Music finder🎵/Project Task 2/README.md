@@ -8,8 +8,8 @@ Welcome to the **LastFM Music Finder**! This application allows users to search 
 
 ### Project Details
 - **Project Name**: LastFM Music Finder
-- **Developer**: [https://muhuala.github.io/muhu/]
-- **GitHub Repository**: [https://github.com/muhuala/muhu]
+- **Developer**: [Muhudin  Alasow](https://muhuala.github.io/muhu/)
+- **GitHub Repository**: [Muhudin Alasow](https://github.com/muhuala/muhu)
 - **Start Date**: [25.9.2024]
 - **Completion Date**: [30.11.2024]
 
