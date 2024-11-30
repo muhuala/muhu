@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Information App</title>
+    <link rel="stylesheet" href="style.css">
+    <!--  Font awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+
+<!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Video -->
+    <div class="video-wrap">
+        <video autoplay loop muted class="custom-video">
+            <source src="video/pexels-2022395.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Error Popover -->
+        <div id="errorPopover" class="popover">
+            <button class="close-btn" onclick="closePopover()">&times;</button>
+            <p id="popoverMessage">Error message here</p>
+        </div>
+
+        <!-- App Title -->
+        <h1 class="title">📻 LastFM Music Finder 🎵</h1>
+
+        <!-- Search Section -->
+        <div class="search-container">
+            <input type="text" id="artistInput" placeholder="Enter artist name">
+            <button id="searchBtn">Search</button>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loadingSpinner" class="loader" style="display: none;"></div>
+
+        <!-- Artist Information -->
+        <div id="artistInfo" class="artist-info-container"></div>
+
+        <!-- Albums Information -->
+        <div id="albumInfo" class="album-grid"></div>
+    </div>
+
+    <!-- "Go Up" Arrow Button -->
+<button id="goUpArrow" class="go-up-arrow" title="Go to Top" style="display: none;">
+    <i class="fas fa-arrow-up"></i> <!-- Font Awesome arrow -->
+</button>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

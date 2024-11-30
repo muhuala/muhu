@@ -1,0 +1,366 @@
+/* Center the Main Container */
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+	
+    text-align: center;
+}
+
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Background Video */
+.video-wrap {
+    z-index: -100;
+}
+
+.custom-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+/* Add this to style.css */
+.warning {
+    color: red;
+    font-weight: bold;
+}
+
+/* Title Styling  */
+.title {
+    color: white;
+    font-family: 'Indie Flower', cursive;
+    font-weight: 400;
+    font-size: 3.5rem; /* Default font size for larger screens */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    white-space: nowrap; /* Prevents wrapping */
+	margin-top: -10px; /* Moves search area slightly up */
+	margin-top: -10px; /* Adjust to move title upwards */
+}
+
+
+
+
+/* Input and Button Container */
+.input-button-container {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+	margin-top: -10px; /* Moves search area slightly up */
+	margin-top: -10px; /* Adjust to move title upwards */
+}
+
+/* Input Styling */
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 300px;
+}
+
+/* Button Styling */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    
+    cursor: pointer;
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+
+
+/* Make albumInfoDiv a relative container with extra bottom padding */
+#albumInfo {
+    position: relative;
+    padding-bottom: 80px; /* Increased padding for more space above "See More" */
+}
+
+/* Style for the "See More" link */
+.see-more {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.see-more a {
+    color: #ffffff; /* Adjust color as needed */
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.see-more a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+
+/* Popover styling */
+.popover {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: -50px; /* Adjust this based on your layout to place above the title */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0e010100;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    max-width: 90%; /* Adjust max-width for responsiveness */
+    width: 50%;
+    box-sizing: border-box;
+    position: relative; /* Ensure the close button is positioned relative to the popover */
+}
+
+/* Style for the popover message */
+.popover p {
+    margin: 0;
+    color: #f4f4f4;
+}
+
+/* Close button for popover */
+.popover .close-btn {
+    position: absolute;
+    top: -10px; /* Adjust as needed */
+    right: -5px; /* Adjust as needed */
+    background-color: #ff0000;
+    color: rgb(248, 248, 248);
+    border: none;
+    border-radius: 50%;
+    width: 20px; /* Set width */
+    height: 20px; /* Set height */
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.popover button {
+    margin-top: 8px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%; /* Make it circular */
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.popover button:hover {
+    background-color: #29ea4c;
+}
+
+
+
+
+
+
+
+/* Go Up Arrow */
+.go-up-arrow {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #007bff; /* Single color background */
+    color: white;
+    border: none;
+    border-radius: 50%; /* Fully rounded shape */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.go-up-arrow i {
+    font-size: 24px; /* Adjust the arrow icon size */
+}
+
+.go-up-arrow:hover {
+    background-color: #0056b3; /* Slightly darker on hover */
+}
+
+
+/* Responsive Design for Mobile Phones */
+@media (max-width: 768px) {
+    .input-button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input, button {
+        width: 70%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+/* Artist Info Container Styling (Same Width as Album Grid) */
+.artist-info-container {
+    max-width: 100%; /* Matches the width of the album grid */
+    margin: 0 auto 20px; /* Centered and with space below */
+    padding: 20px 20px; /* Matches padding of album grid */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+/* Artist Card Styling */
+.artist-card {
+    text-align: center;
+}
+
+/* Album Grid Styling */
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 columns for a 6x6 grid layout */
+    gap: 10px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-bottom: 1in; /* Adds 1 inch of space below the album grid */
+}
+
+/* Shared Styling for Artist Card and Album */
+.album, .artist-card {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+/* Responsive Adjustments for Smartphones */
+@media (max-width: 480px) {
+    #albumInfo {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Wider grid columns on small screens */
+    }
+}
+/* Artist Name and Bio Styling */
+.artist-name {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.artist-bio {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.artist-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.artist-link:hover {
+    text-decoration: underline;
+}
+
+/* Album Item Specific Styling */
+.album img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Hide artist and album information until a search is performed */
+
+#artistInfo, #albumInfo {
+    display: none; 
+}
+
+
+.album h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.album a {
+    text-decoration: none;
+    color: #0073e6;
+    font-weight: bold;
+}
+
+.album a:hover {
+    text-decoration: underline;
+}
+
+/* Animation for Smooth Appearance */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem; /* Adjust font size for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.5rem; /* Adjust font size for mobile devices */
+    }
+}
+
+
+
+.search-container {
+    text-align: center; /* Center-align input and button */
+    margin-bottom: 20px; /* Space between search bar and loader */
+}
+
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid lightblue;
+  border-right-color: orange;
+  animation: l2 1s infinite linear;
+
+  /* Center loader below the search form */
+  display: none; /* Initially hidden, show when loading */
+  margin: 0 auto; /* Center horizontally */
+}
+
+@keyframes l2 {
+  to {
+    transform: rotate(1turn);
+  }
+}
