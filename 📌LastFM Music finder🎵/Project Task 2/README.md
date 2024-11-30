@@ -62,4 +62,4 @@ Creating this project was an invaluable experience, reinforcing my skills in Jav
 
 ### References
 - **LastFM API Documentation**: Learn more about the API used for artist and album information [here](https://www.last.fm/api).
-- **JavaScript Fetch API**: Used for making HTTP requests to fetch data from external sources ([MDN Fetch API Documentation](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)).
+
